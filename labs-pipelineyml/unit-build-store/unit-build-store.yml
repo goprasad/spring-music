@@ -2,7 +2,7 @@ resources:
 - name: music-repo
   type: git
   source:
-    uri: git@github.com:DaxterM/spring-music.git
+    uri: git@github.com:goprasad/spring-music.git
     branch: master
     private_key: {{music_private_key}}
 - name: version
@@ -13,7 +13,7 @@ resources:
     key: current-version
     access_key_id: {{s3-access-key-id}}
     secret_access_key: {{s3-secret-access-key}}
-    initial_version: 2.0.0
+    initial_version: 3.0.0
 - name: music-release
   type: s3
   source:
@@ -22,15 +22,6 @@ resources:
     regexp: spring-music-(.*).war
     access_key_id: {{s3-access-key-id}}
     secret_access_key: {{s3-secret-access-key}}
-- name: cf-uat
-  type: cf
-  source:
-    api: {{cf-api-uat}}
-    organization: {{uat-organization}}
-    username: {{deploy-uat-username}}
-    password: {{deploy-uat-password}}
-    skip_cert_check: true
-    space: {{uat-space}}
 jobs:
 - name: unit
   plan:
