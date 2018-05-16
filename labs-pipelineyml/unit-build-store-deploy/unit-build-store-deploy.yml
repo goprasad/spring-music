@@ -2,7 +2,7 @@ resources:
 - name: music-repo
   type: git
   source:
-    uri: git@github.com:DaxterM/spring-music.git
+    uri: git@github.com:goprasad/spring-music.git
     branch: master
     private_key: {{music_private_key}}
 - name: version
